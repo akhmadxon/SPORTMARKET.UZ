@@ -16,11 +16,11 @@ const Index = () => {
           Действует гибкая система скидок. 
         </p>
         <div className="flex  justify-end">
-          <Image className="cursor-pointer text-4xl opacity-80 w-[112px] h-9 relative" src={Next}></Image>
+          <Image className="cursor-pointer text-4xl opacity-80 w-[112px] h-9 relative" src={Next} alt='sadsfdf'></Image>
         </div>
       </div>
       <div className="flex w-[1240px] h-[154px]  flex-wrap justify-center gap-4">
-       <Image className='mt-5' src={Brend}/>
+       <Image className='mt-5' src={Brend} alt='sadjiif'/>
       </div>
     </div>
   );

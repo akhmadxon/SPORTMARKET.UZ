@@ -32,7 +32,7 @@ const Advantages = () => {
       <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {advantages.map((advantage, index) => (
           <div className="bg-white w-[292px] h-[289px] items-center hover:scale-105    rounded-lg shadow-md p-6 text-center" key={index}>
-            <Image className="text-4xl ml-20 mt-10 mb-4" src={advantage.icon}></Image>
+            <Image className="text-4xl ml-20 mt-10 mb-4" src={advantage.icon} alt='sasdsf'></Image>
             <p className="text-lg text-gray-700">{advantage.text}</p>
           </div>
         ))}
