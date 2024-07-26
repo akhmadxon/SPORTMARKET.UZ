@@ -9,12 +9,12 @@ import Shop from "../../public/shop.svg";
 import User from "../../public/u_user.svg";
 import Heart from "../../public/u_heart-sign.svg";
 
-function HeaderComponent() {
+function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const menuItems = [
-    { title: "Продукты", path: "/products" },
+  const data = [
+    { title: "Продукты", path: "/product" },
     { title: "Контакты", path: "/contacts" },
-    { title: "Оплата и Доставка", path: "/payment" },
+    { title: "Оплата и Доставка", path: "/delivery" },
     { title: "Новости", path: "/news" },
     { title: "О нас", path: "/about" },
   ];
@@ -41,8 +41,25 @@ function HeaderComponent() {
                 </button>
               </div>
               <div className="hidden lg:flex lg:items-center lg:gap-8">
-                <MenuItems items={menuItems} />
-                <ContactInfo />
+                <ul className="flex items-center gap-8">
+                  {data.map((item, index) => (
+                    <li key={index}>
+                      <Link href={item.path} className="text-white hover:text-orange-300">
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex items-center gap-8">
+                  <p className=" text-white flex cursor-pointer hover:text-orange-300 items-center gap-1">
+                    <i className="bi bi-telephone text-white"></i>
+                      +998 (90) 120-00-39
+                  </p>
+                  <p className="text-white cursor-pointer flex hover:text-orange-300 items-center gap-2">
+                    <i className="bi bi-envelope text-white"></i>
+                    info@gmail.com
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -54,7 +71,7 @@ function HeaderComponent() {
                 <i className="bi bi-stack"></i>
                 <span className="hidden lg:inline">Каталог</span>
               </button>
-              <div className="relative w-[100px] lg:w-[402px] h-10 lg:h-12 md:w-[302px] sm:w-full flex">
+              <div className="relative  w-[100px]  lg:w-[402px] h-10 lg:h-12 md:w-[302px] sm:w-full flex ">
                 <input
                   type="text"
                   className="w-full h-full py-2 px-4 lg:px-10 rounded outline-none bg-[#F2F2F2] placeholder:text-black"
@@ -63,94 +80,39 @@ function HeaderComponent() {
                 <i className="bi bi-search absolute top-2 right-3 lg:top-3"></i>
               </div>
             </div>
-            <UserActions />
+            <div className="flex items-center gap-4 lg:gap-8">
+              <button className="rounded bg-[#F2F2F2] text-black p-3 lg:p-4">
+                <Image src={User} alt="User" />
+              </button>
+              <button className="rounded bg-[#F2F2F2] text-black p-3 lg:p-4">
+                <Image src={Heart} alt="Heart" />
+              </button>
+              <button className="flex items-center gap-2 lg:gap-4 px-4 py-2 lg:px-10 lg:py-3 rounded bg-[#F2F2F2] text-black">
+                <Image src={Shop} alt="Shop" />
+                <span className="hidden lg:inline">Корзина</span>
+              </button>
+            </div>
           </div>
         </div>
         {isOpen && (
-          <MobileMenu items={menuItems} />
+          <div className="lg:hidden bg-[#1F1D14]">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+              <ul className="flex flex-col gap-4">
+                {data.map((item, index) => (
+                  <li key={index}>
+                    <Link href={item.path} className="text-white">
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            
+            </div>
+          </div>
         )}
       </nav>
     </>
   );
 }
 
-function MenuItems({ items }) {
-  return (
-    <ul className="flex items-center gap-8">
-      {items.map((item, index) => (
-        <li key={index}>
-          <Link href={item.path} className="text-white">
-            {item.title}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function ContactInfo() {
-  return (
-    <div className="flex items-center gap-8">
-      <p className="text-white flex items-center gap-1">
-        <i className="bi bi-telephone text-white"></i>
-        <p className="text-white text-xs font-normal font-['Fira Sans']">
-          +998 (90)
-        </p>
-        120-00-39
-      </p>
-      <p className="text-white flex items-center gap-2">
-        <i className="bi bi-envelope text-white"></i>
-        aesonbuhonov@gmail.com
-      </p>
-    </div>
-  );
-}
-
-function UserActions() {
-  return (
-    <div className="flex items-center gap-4 lg:gap-8">
-      <button className="rounded bg-[#F2F2F2] text-black p-3 lg:p-4">
-        <Image src={User} alt="User" />
-      </button>
-      <button className="rounded bg-[#F2F2F2] text-black p-3 lg:p-4">
-        <Image src={Heart} alt="Heart" />
-      </button>
-      <button className="flex items-center gap-2 lg:gap-4 px-4 py-2 lg:px-10 lg:py-3 rounded bg-[#F2F2F2] text-black">
-        <Image src={Shop} alt="Shop" />
-        <span className="hidden lg:inline">Корзина</span>
-      </button>
-    </div>
-  );
-}
-
-function MobileMenu({ items }) {
-  return (
-    <div className="lg:hidden bg-[#1F1D14]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <ul className="flex flex-col gap-4">
-          {items.map((item, index) => (
-            <li key={index}>
-              <Link href={item.path} className="text-white">
-                {item.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <div className="flex flex-col gap-4 mt-4">
-          <p className="text-white flex items-center gap-2">
-            <i className="bi bi-telephone text-white"></i>
-            <span className="text-xs font-normal">
-              +998 (90) 120-00-39
-            </span>
-          </p>
-          <p className="text-white flex items-center gap-2">
-            <i className="bi bi-envelope text-white"></i>
-            aesonbuhonov@gmail.com
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default HeaderComponent;
+export default Header;

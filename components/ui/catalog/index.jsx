@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-import "./style.css";
+import "./style.scss";
 import { FreeMode, Pagination } from 'swiper/modules';
 import { Myachi , Obuv , Odejdi , Terenajorni , VodniSport , GorniSport } from '@/assets/images';
 import Image from 'next/image';

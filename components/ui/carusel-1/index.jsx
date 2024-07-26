@@ -16,7 +16,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import "./style.css";
+import "./style.scss";
 
 import ImageCarusel from "../../../assets/images/img-carusel1.png";
 
