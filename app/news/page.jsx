@@ -1,7 +1,7 @@
   "use client";
 
   import React from "react";
-  import { CaruselProduct } from "@/components/ui";
+  import { GlobalCard } from "@/components/ui";
   import Image from "next/image";
   import HomeIcon from "@/public/u_home-alt.svg";
   import Next from "@/public/right (2).svg";
@@ -63,8 +63,8 @@
                 </div>
               </div>
             </div>
-            <div className="mt-10"> {/* Added margin-top for spacing */}
-              <CaruselProduct />
+            <div className="mt-10"> 
+              <GlobalCard/>
             </div>
           </div>
         </section>

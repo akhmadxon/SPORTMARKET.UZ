@@ -1,6 +1,6 @@
 'use client'
 
-import { CaruselProduct } from '@/components/ui'
+import { GlobalCard } from '@/components/ui'
 import Image from "next/image";
 import HomeIcon from "@/public/u_home-alt.svg";
 import Next from "@/public/right (2).svg";
@@ -88,7 +88,7 @@ const Index = () => {
             </div>
           </div>
           <div className="mt-10">
-            <CaruselProduct />
+            <GlobalCard />
           </div>
         </div>
       </section>
