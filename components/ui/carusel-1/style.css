@@ -1,3 +1,4 @@
+/* Base styles */
 .swiper-button-next,
 .swiper-button-prev {
   color: #fff;
@@ -23,4 +24,28 @@
 .swiper-pagination-bullets,
 .swiper-scrollbar {
   display: none;
-} /*# sourceMappingURL=style.css.map */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 25px;
+    height: 25px;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=style.css.map */
