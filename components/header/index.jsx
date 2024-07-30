@@ -17,6 +17,7 @@ function Header() {
     { title: "Оплата и Доставка", path: "/delivery" },
     { title: "Новости", path: "/news" },
     { title: "О нас", path: "/about" },
+    
   ];
 
   return (
@@ -87,10 +88,14 @@ function Header() {
               <button className="rounded bg-[#F2F2F2] text-black p-3 lg:p-4">
                 <Image src={Heart} alt="Heart" />
               </button>
-              <button className="flex items-center gap-2 lg:gap-4 px-4 py-2 lg:px-10 lg:py-3 rounded bg-[#F2F2F2] text-black">
-                <Image src={Shop} alt="Shop" />
-                <span className="hidden lg:inline">Корзина</span>
-              </button>
+              <Link
+                  href="/karzina"
+                  className="flex items-center gap-2 lg:gap-4 px-4 py-2 lg:px-10 lg:py-3 rounded bg-[#F2F2F2] text-black"
+                >
+                  <Image src={Shop} alt="shop" />
+                  <span className="hidden sm:hidden lg:block">Корзина</span>
+                </Link>
+
             </div>
           </div>
         </div>
