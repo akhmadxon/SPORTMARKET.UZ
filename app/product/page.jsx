@@ -7,7 +7,6 @@ import Next from "@/public/right (2).svg";
 import React, { useState } from 'react';
 import { Slider, TextField, Select, MenuItem, Button, FormControl, InputLabel } from '@mui/material';
 import { styled } from '@mui/material/styles';
-
 const YellowSlider = styled(Slider)({
   color: '#FFD700',
   
@@ -15,22 +14,11 @@ const YellowSlider = styled(Slider)({
 
 const Index = () => {
   const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  const month = String(currentDate.getMonth() + 1).padStart(2, "0");
-  const day = String(currentDate.getDate()).padStart(2, "0");
   const [price, setPrice] = useState([3000, 40000]);
 
   const handlePriceChange = (event, newValue) => {
     setPrice(newValue);
   };
-
-  const cards = Array(8).fill({
-    title: "Как правильно выбрать эллиптический тренажер?",
-    description:
-      "Эллиптические тренажёры популярны среди людей любого возраста и с разным уровнем физической подготовки...",
-    views: 250,
-    date: `${year}-${month}-${day}`,
-  });
 
   return (
     <main>

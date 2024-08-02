@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import Modal from "@/components/signin/index";
 import logo from "../../assets/icons/logo.svg";
 import Shop from "../../public/shop.svg";
 import User from "../../public/u_user.svg";
@@ -11,17 +11,26 @@ import Heart from "../../public/u_heart-sign.svg";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const data = [
     { title: "Продукты", path: "/product" },
-    { title: "Контакты", path: "/contacts" },
+    { title: "Контакты", path: "/single" },
     { title: "Оплата и Доставка", path: "/delivery" },
     { title: "Новости", path: "/news" },
     { title: "О нас", path: "/about" },
     
   ];
 
+  
   return (
     <>
+    <Modal
+        open={open}
+        handleClose={handleClose}
+        handleOpen={() => handleOpen(false)}
+      />
       <nav>
         <div className="w-full bg-[#1F1D14]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,7 +68,7 @@ function Header() {
                   <p className="text-white cursor-pointer flex hover:text-orange-300 items-center gap-2">
                     <i className="bi bi-envelope text-white"></i>
                     info@gmail.com
-                  </p>
+                  </p>  
                 </div>
               </div>
             </div>
@@ -82,7 +91,8 @@ function Header() {
               </div>
             </div>
             <div className="flex items-center gap-4 lg:gap-8">
-              <button className="rounded bg-[#F2F2F2] text-black p-3 lg:p-4">
+              <button className="rounded bg-[#F2F2F2] text-black p-3 lg:p-4"
+               onClick={handleOpen}>
                 <Image src={User} alt="User" />
               </button>
               <button className="rounded bg-[#F2F2F2] text-black p-3 lg:p-4">
