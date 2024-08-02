@@ -60,7 +60,7 @@ const Index = () => {
                     </button>
                   </div>
                   <div className="p-4">
-                    <Link href={`/products/${product_id}`} className="text-lg font-bold mb-2 w-[216px]">
+                    <Link href={`/products`} className="text-lg font-bold mb-2 w-[216px]">
                       {product_name}
                     </Link>
                     <div className="text-red-500 font-bold text-xl">
