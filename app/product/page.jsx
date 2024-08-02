@@ -7,6 +7,7 @@ import Next from "@/public/right (2).svg";
 import React, { useState } from 'react';
 import { Slider, TextField, Select, MenuItem, Button, FormControl, InputLabel } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import Get from "@/components/products"
 const YellowSlider = styled(Slider)({
   color: '#FFD700',
   
@@ -21,8 +22,11 @@ const Index = () => {
   };
 
   return (
+    
     <main>
+      
       <section className="pt-5 pb-[83px] bg-[#F2F2F2]">
+        
         <div className="container mx-auto px-2.8">
           <nav className="text-gray-500 flex text-sm mb-4">
             <Image src={HomeIcon} alt="img" className="mr-1" />
@@ -33,7 +37,8 @@ const Index = () => {
             <p className="text-black">Продукты</p>
           </nav>
           
-          <div className="flex flex-wrap w-full justify-between items-start gap-[24px]">
+          <div className="flex flex-col items-center sm:flex-col lg:items-start  lg:flex-row justify-center gap-4 pt-[60px]">
+            
             <div style={{ padding: 20, width: 300, backgroundColor: '#fff', borderRadius: 10 }}>
               <h2>Фильтр</h2>
               <div>
@@ -74,8 +79,9 @@ const Index = () => {
                 <p className='text-black bolder'>Показать результат</p>
               </Button>
             </div>
+            <Get/>
           </div>
-          <div className="mt-10">
+          <div>
             <GlobalCard />
           </div>
         </div>
