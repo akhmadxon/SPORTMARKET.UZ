@@ -56,8 +56,8 @@ const Carusel = () => {
               </button>
             </div>
             <div className="relative flex-1 h-full w-full lg:w-auto">
-              <div className=" hidden sm:hidden lg:block absolute top-8 right-2 lg:right-auto lg:left-2 w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] lg:w-[380px] lg:h-[380px] rounded-full bg-red-500 z-0"></div>
-              <div className="  hidden sm:hidden lg:block  absolute top-[-20px] right-[20px] lg:right-auto  sm:left-[60px] md:left-[80px] lg:left-[130px] rotate-12 w-[80px] sm:w-[120px] md:w-[150px] lg:w-[355px] h-[200px] sm:h-[300px] md:h-[400px] lg:h-[921px] bg-green-500 z-0"></div>
+              <div className="hidden lg:block absolute top-8 right-2 lg:right-auto lg:left-2 w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] lg:w-[380px] lg:h-[380px] rounded-full bg-red-500 z-0"></div>
+              <div className="hidden lg:block absolute top-[-20px] right-[20px] lg:right-auto sm:left-[60px] md:left-[80px] lg:left-[130px] rotate-12 w-[80px] sm:w-[120px] md:w-[150px] lg:w-[355px] h-[200px] sm:h-[300px] md:h-[400px] lg:h-[921px] bg-green-500 z-0"></div>
               <div className="relative z-10 pr-5 flex justify-center items-center h-full">
                 <div className="w-[160px] sm:w-[200px] md:w-[250px] lg:w-[400px]">
                   <Image
