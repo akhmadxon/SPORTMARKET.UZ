@@ -12,16 +12,17 @@ function FooterComponent() {
             <div className="flex flex-col gap-5">
               <p className="text-[18px] font-bold text-white">Контакты</p>
               <p className="text-white flex items-center gap-2">
-                <i className="bi bi-telephone text-white"></i>+998 (90) 120-00-39
+                <i className="bi bi-telephone text-white"></i>+998 (90) 565-85-85
               </p>
               <p className="text-white flex items-center gap-2">
-                <i className="bi bi-envelope text-white"></i>aesonbuhonov@gmail.com
+                <i className="bi bi-envelope text-white"></i>support@figma.com
               </p>
             </div>
             <p className="text-white flex items-start gap-2">
               <i className="bi bi-geo-alt text-white"></i>
               <span>
-                Tashkent Sh. Yunusobod 19-kvartal<br /> 3 uy
+              Tashkent Sh. Chilonzor 9 kvartal  <br />
+              12 uy
               </span>
             </p>
             <div>

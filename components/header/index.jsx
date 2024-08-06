@@ -63,7 +63,7 @@ function Header() {
                 <div className="flex items-center gap-8">
                   <p className=" text-white flex cursor-pointer hover:text-orange-300 items-center gap-1">
                     <i className="bi bi-telephone text-white"></i>
-                      +998 (90) 120-00-39
+                    +998 (90) 565-85-85
                   </p>
                   <p className="text-white cursor-pointer flex hover:text-orange-300 items-center gap-2">
                     <i className="bi bi-envelope text-white"></i>
