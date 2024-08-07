@@ -5,7 +5,6 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import "./style.scss";
 import { FreeMode, Pagination, Navigation } from 'swiper/modules';
 import { Myachi, Obuv, Odejdi, Terenajorni, VodniSport, GorniSport } from '@/assets/images';
 import Image from 'next/image';
@@ -27,59 +26,55 @@ export default function CaruselCatalog() {
   ];
 
   return (
-    <Swiper
-      spaceBetween={0}
-      freeMode={true}
-      pagination={{
-        clickable: true,
-        el: '.swiper-pagination',
-      }}
-      navigation={{
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }}
-      breakpoints={{
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-        },
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 0,
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 0,
-        },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 0,
-        },
-        1280: {
-          slidesPerView: 5,
-          spaceBetween: 0,
-        },
-        1536: {
-          slidesPerView: 6,
-          spaceBetween: 0,
-        },
-      }}
-      modules={[FreeMode, Pagination, Navigation]}
-      className="mySwiper"
-    >
-      {data.map((item, index) => (
-        <SwiperSlide key={index}>
-          <div className="w-[187px] h-[247px] rounded-lg pt-6 pb-[36px] px-4 flex items-center justify-between flex-col" style={{ background: item.bg }}>
-            <div className="text-[20px] text-start">{item.title}</div>
-            <div>
-              <Image src={item.img} width={126} height={102} alt="logo" />
+    <div className="relative w-full">
+      <Swiper
+        spaceBetween={10}
+        freeMode={true}
+        pagination={{
+          clickable: true,
+          el: '.swiper-pagination',
+        }}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+          1280: {
+            slidesPerView: 5,
+          },
+          1536: {
+            slidesPerView: 6,
+          },
+        }}
+        modules={[FreeMode, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        {data.map((item, index) => (
+          <SwiperSlide key={index}>
+            <div className="w-full h-full rounded-lg pt-6 pb-9 px-4 flex flex-col items-center justify-between" style={{ background: item.bg }}>
+              <div className="text-lg text-start">{item.title}</div>
+              <div>
+                <Image src={item.img} width={126} height={102} alt={item.title} />
+              </div>
             </div>
-          </div>
-        </SwiperSlide>
-      ))}
-      <div className="swiper-pagination"></div>
-      <div className="swiper-button-next"></div>
-      <div className="swiper-button-prev"></div>
-    </Swiper>
+          </SwiperSlide>
+        ))}
+        <div className="swiper-pagination"></div>
+        <div className="swiper-button-next"></div>
+        <div className="swiper-button-prev"></div>
+      </Swiper>
+    </div>
   );
 }

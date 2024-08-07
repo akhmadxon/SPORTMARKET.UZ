@@ -10,7 +10,7 @@ import Basket from "@/components/service/karzina";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Index = () => {
+const ProductCard = ({ text, bg }) => {
   const [data, setData] = useState([]);
   const [likedItems, setLikedItems] = useState([]);
 
@@ -66,16 +66,16 @@ const Index = () => {
   return (
     <>
       <ToastContainer />
-      <div className="font-Fira-sans min-h-screen pb-12">
+      <div className="font-Fira-sans mt-4 pb-1">
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4">
             {data.length > 0 ? (
               data.map((product) => (
                 <div
                   key={product.product_id}
-                  className="border rounded-lg overflow-hidden shadow-lg w-[292px] bg-white relative cursor-pointer transform transition-transform hover:scale-105"
+                  className="border rounded-lg overflow-hidden shadow-lg w-full bg-white relative cursor-pointer transform transition-transform hover:scale-105"
                 >
-                  <div className="relative w-[300px] h-[270px]">
+                  <div className="relative w-full h-48">
                     {product.image_url?.length > 0 ? (
                       <Image
                         src={product.image_url[0]}
@@ -101,20 +101,20 @@ const Index = () => {
                     </button>
                   </div>
                   <div className="p-4">
-                    <Link href={`/product/${product.product_id}`} className="text-lg font-bold mb-2 w-[216px]">
+                    <Link href={`/product/${product.product_id}`} className="text-md font-bold mb-2 block">
                       {product.product_name}
                     </Link>
-                    <div className="text-red-500 font-bold text-xl">
+                    <div className="text-red-500 font-bold text-lg">
                       {product.cost - (product.cost * product.discount) / 100} uzs
                     </div>
-                    <div className="text-gray-500 line-through mb-1">
+                    <div className="text-gray-500 line-through mb-1 text-sm">
                       {product.cost} uzs
                     </div>
                     <button
                       onClick={() => handleBasket(product.product_id)}
-                      className="mt-4 w-full bg-yellow-500 text-white py-2 rounded-lg flex items-center justify-center transition-colors hover:bg-yellow-600"
+                      className="mt-2 w-full bg-yellow-500 text-white py-1 rounded-lg flex items-center justify-center transition-colors hover:bg-yellow-600 text-sm"
                     >
-                      <FaShoppingCart className="mr-2" /> Корзина
+                      <FaShoppingCart className="mr-1" /> Корзина
                     </button>
                   </div>
                 </div>
@@ -129,4 +129,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default ProductCard;
