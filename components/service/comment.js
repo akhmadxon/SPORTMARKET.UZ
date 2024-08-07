@@ -1,9 +1,21 @@
 import http from "@/components/service/baseURL";
 
-const comment = {
-  get: (id) =>
-    http.get("/product-comments", { params: { id, page: 1, limit: 10 } }),
-  post: (commentData) => http.post("/comment", commentData),
+export const getComment = async (page, limit, product_id) => {
+  try {
+    const response = await http.get(`/product-comments?page=${page}&limit=${limit}&id=${product_id}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
 };
 
-export default comment;
+export const addComment = async (product_id, commentText) => {
+  try {
+    const response = await http.post('/comment', { product_id, commentText });
+    return response.data;
+  } catch (error) {
+    console.error('Error adding comment:', error);
+    throw error;
+  }
+};
